@@ -24,7 +24,8 @@ int g0/0
 description SpringR1 to SpringCore1
 ip address 10.150.127.5 255.255.255.252
 #ipv6 address 2001:bbfc:88ef:ffff::5/64
-ip helper-address 10.150.0.21
+ip helper-address 10.150.0.12
+ip helper-address 10.150.0.13
 ip ospf network point-to-point
 ip ospf 22 area 0
 no shut
@@ -43,7 +44,8 @@ int g0/2
 description SpringR1 to SpringR2
 ip address 10.150.127.1 255.255.255.252
 #ipv6 address 2001:bbfc:88ef:ffff::1/64
-ip helper-address 10.150.0.10 
+ip helper-address 10.150.0.12
+ip helper-address 10.150.0.13
 ip nat inside
 ip virtual-ressembly in
 ip ospf 22 area 0
