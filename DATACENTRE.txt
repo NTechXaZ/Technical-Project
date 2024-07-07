@@ -1,0 +1,84 @@
+DataCentre
+
+#basic config 
+
+en
+conf t
+hostname DataCentre
+enable secret Windows1
+line console 0
+password Windows1
+login
+logging synchronous 
+line vty 0 15
+password Windows1
+login
+transport input telnet
+service password-encryption
+no ip domain-lookup
+clock timezone EST -5
+banner motd #Authorized Access Only!#
+sdm prefer dual-ipv4-and-ipv6 default
+vtp mode transparent
+no ip domain-lookup
+
+no ip routing
+
+
+#Vlans
+
+vlan 999
+name Native
+vlan 720
+name IT
+vlan 990
+name DataCentre 
+
+
+#Port-Channel 
+
+int port-channel 1
+description EtherChannel link to SpringCore1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan 999,990,720
+no shut
+
+int port-channel 2
+description EtherChannel link to SpringCore2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan 999,990,720
+no shut
+
+int range g0/0-1
+no ip address
+no shut
+channel-group 1 mode active
+
+int range g0/2-3
+no ip address
+no shut
+channel-group 2 mode active
+
+int vlan 990 
+ip add 10.150.0.44 255.255.255.0
+
+
+int g1/0
+switchport mode access
+switchport access vlan 999
+switchport nonegotiate
+shutdown
+
+int 1/1
+switchport mode access
+switchport access vlan 990
+switchport nonegotiate
+
+int g1/2
+switchport mode access
+switchport access vlan 720
+switchport nonegotiate

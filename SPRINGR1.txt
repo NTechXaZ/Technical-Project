@@ -1,0 +1,64 @@
+SpringR1
+
+# Basic Config
+en
+conf t
+hostname SpringR1
+enable secret Windows1
+line console 0
+password Windows1
+login
+line vty 0 15
+password Windows1
+login
+transport input telnet
+service password-encryption
+no ip domain-lookup
+clock timezone EST -5
+banner motd #Authorized Access Only!#
+
+
+# Point-to-Point IP Interface
+
+int g0/0
+description SpringR1 to SpringCore1
+ip address 10.150.127.5 255.255.255.252
+#ipv6 address 2001:bbfc:88ef:ffff::5/64
+ip helper-address 10.150.0.21
+ip ospf network point-to-point
+ip ospf 22 area 0
+no shut
+
+int g0/1
+description SpringR1 to SpringCore2
+ip address 10.150.127.9 255.255.255.252
+#ipv6 address 2001:bbfc:88ef:ffff::9/64
+ip nat inside
+ip virtual-ressembly in
+ip ospf network point-to-point
+ip ospf 22 area 0
+no shut
+
+int g0/2
+description SpringR1 to SpringR2
+ip address 10.150.127.1 255.255.255.252
+#ipv6 address 2001:bbfc:88ef:ffff::1/64
+ip helper address 10.150.0.10 
+ip nat inside
+ip virtual-ressembly in
+ip ospf 22 area 0
+no shut
+
+int g0/3
+description SpringR1 to ISP
+ip address dhcp
+#ipv6 address dhcp
+no shut
+
+router ospf 22
+router-id 1.1.1.1
+priority 120
+auto-cost reference-bandwidth 1000
+passive-interface g0/3
+default-information originate
+

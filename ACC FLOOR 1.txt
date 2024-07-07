@@ -1,0 +1,119 @@
+Acc Floor 1 
+
+#basic config 
+
+en
+conf t
+hostname Acc-Floor1
+enable secret Windows1
+line console 0
+password Windows1
+login
+logging synchronous 
+line vty 0 15
+password Windows1
+login
+transport input telnet
+service password-encryption
+no ip domain-lookup
+clock timezone EST -5
+banner motd #Authorized Access Only!#
+sdm prefer dual-ipv4-and-ipv6 default
+no ip domain-lookup
+vtp mode transparent
+
+no ip routing
+
+
+#vlans 
+
+vlan 105
+name PharmaPlus
+vlan 115
+name DynaLabs
+vlan 125
+name Reception
+vlan 135
+name Security
+vlan 145
+name Facilities
+vlan 155
+name Visitor1
+vlan 720
+name IT
+vlan 990
+name DataCentre
+vlan 999
+Name Native
+
+
+#interfaces config 
+
+int g0/0
+no shut
+description trunk link to SpingCore1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan 105,115,125,135,145,155,720,990,999
+
+int g0/1
+no shut
+description Trunk link to SpringCore2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan 105,115,125,135,145,155,720,990,999
+
+int g0/2
+description Access port for PharmaPlus
+switchport mode access
+switchport access vlan 105
+switchport nonegotiate
+no shut
+int g0/3
+description Access port for DynaLabs
+switchport mode access
+switchport access vlan 115
+switchport nonegotiate
+no shut
+int g1/0
+description Access port for Reception
+switchport mode access
+switchport access vlan 125
+switchport nonegotiate
+no shut
+int g1/1
+description Access port for Security
+switchport mode access
+switchport access vlan 135
+switchport nonegotiate
+no shut
+int g1/2
+description Access port for Facilities
+switchport mode access
+switchport access vlan 145
+switchport nonegotiate
+no shut
+int g1/3
+description Access port for Visitor1
+switchport mode access
+switchport access vlan 155
+switchport nonegotiate
+no shut
+int g3/2
+description Access port for IT
+switchport mode access
+switchport access vlan 720
+switchport nonegotiate
+no shut
+
+int g2/2
+switchport mode access
+switchport access vlan 999
+switchport nonegotiate
+shutdown
+
+interface vlan 990
+ip add 10.150.0.41 255.255.255.0
+
