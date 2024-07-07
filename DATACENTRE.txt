@@ -65,6 +65,7 @@ channel-group 2 mode active
 
 int vlan 990 
 ip add 10.150.0.44 255.255.255.0
+no shut
 
 
 int g1/0
@@ -73,7 +74,7 @@ switchport access vlan 999
 switchport nonegotiate
 shutdown
 
-int 1/1
+int g1/1
 switchport mode access
 switchport access vlan 990
 switchport nonegotiate
