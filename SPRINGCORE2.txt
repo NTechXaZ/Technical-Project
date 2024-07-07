@@ -66,8 +66,8 @@ name Native
 
 #STP
 spanning-tree mode rapid-pvst
-spanning-tree vlan 999,105,115,125,135,145,155,200,205,210,215,220 priority 19999
-spanning-tree vlan 305,310,315,320,325,720,990 priority 18888
+spanning-tree vlan 999,105,115,125,135,145,155,200,205,210,215,220 priority 24576
+spanning-tree vlan 305,310,315,320,325,720,990 priority 20480
 
 
 # Point-to-Point IP Interface
