@@ -348,11 +348,11 @@ no shut
 
 int vlan 999 
 Description Native 
-ip address 10.150.999.2
+ip address 10.150.99.2 255.255.255.0
 ip helper-address 10.150.0.12
 ip helper-address 10.150.0.13
 standby version 2
-standby 999 ip 10.150.999.1
+standby 999 ip 10.150.99.1
 standby 999 priority 150
 standby 999 preempt
 ip ospf network point-to-point
