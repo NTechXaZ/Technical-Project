@@ -19,7 +19,7 @@ banner motd #Authorized Access Only!#
 sdm prefer dual-ipv4-and-ipv6 default
 no ip domain-lookup
 vtp mode transparent
-
+no logging console
 no ip routing
 
 
