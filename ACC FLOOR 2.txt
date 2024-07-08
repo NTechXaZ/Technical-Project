@@ -67,30 +67,49 @@ switchport mode access
 switchport access vlan 200
 switchport nonegotiate
 no shut
+
 int g0/3
 description Access port for ChildrensHealth
 switchport mode access
 switchport access vlan 205
 switchport nonegotiate
 no shut
+
 int g1/0
 description Access port for CoolidgeLab
 switchport mode access
 switchport access vlan 210
 switchport nonegotiate
 no shut
+
 int g1/1
 description Access port for MassageSpa
 switchport mode access
 switchport access vlan 215
 switchport nonegotiate
 no shut
+
 int g1/2
 description Access port for Visitor2
 switchport mode access
 switchport access vlan 220
 switchport nonegotiate
 no shut
+
+int g1/3
+description Access port for Visitor2
+switchport mode access
+switchport access vlan 220
+switchport nonegotiate
+no shut
+
+int g2/0
+description Access port for Visitor2
+switchport mode access
+switchport access vlan 220
+switchport nonegotiate
+no shut
+
 int g3/2
 description Access port for IT
 switchport mode access
@@ -98,12 +117,8 @@ switchport access vlan 720
 switchport nonegotiate
 no shut
 
-int g1/3
-switchport mode access
-switchport access vlan 999
-switchport nonegotiate
-shutdown
+
 
 interface vlan 990 
-ip add 10.150.0.42 255.255.255.0
+ip add 10.150.0.51 255.255.255.0
 no shut
