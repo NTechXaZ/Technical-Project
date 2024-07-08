@@ -1,5 +1,3 @@
-ACC Floor 2
-
 #basic config 
 
 en
@@ -43,6 +41,7 @@ vlan 990
 name DataCentre
 vlan 999
 Name Native
+exit
 
 
 # trunk and config 
@@ -106,4 +105,5 @@ switchport nonegotiate
 shutdown
 
 interface vlan 990 
-ip add 10.150.0.51 255.255.255.0
+ip add 10.150.0.42 255.255.255.0
+no shut
