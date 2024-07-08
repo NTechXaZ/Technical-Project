@@ -21,7 +21,7 @@ banner motd #Authorized Access Only!#
 sdm prefer dual-ipv4-and-ipv6 default
 no ip domain-lookup
 vtp mode transparent
-
+no logging console
 no ip routing
 
 
@@ -66,18 +66,21 @@ switchport mode access
 switchport access vlan 305
 switchport nonegotiate
 no shut
+
 int g0/3
 description Access port for Physiotherapy
 switchport mode access
 switchport access vlan 310
 switchport nonegotiate
 no shutdown
+
 int g1/0
 description Access port for DentalOffice
 switchport mode access
 switchport access vlan 315
 switchport nonegotiate
 no shutdown
+
 int g1/1
 description Access port for ENT
 switchport mode access
@@ -90,31 +93,27 @@ switchport mode access
 switchport access vlan 325
 switchport nonegotiate
 no shut
+
+int g1/3
+description Access port for Visitor3
+switchport mode access
+switchport access vlan 325
+switchport nonegotiate
+no shut
+
 int g2/0
 description Access port for Visitor3
 switchport mode access
 switchport access vlan 325
 switchport nonegotiate
 no shut
-int g2/1
-description Access port for Visitor3
-switchport mode access
-switchport access vlan 325
-switchport nonegotiate
-no shut
+
 int g3/2
 description Access port for IT
 switchport mode access
 switchport access vlan 720
 switchport nonegotiate
 no shut
-
-int g1/3
-switchport mode access
-switchport access vlan 999
-switchport nonegotiate
-shutdown
-
 
 
 int vlan 990
