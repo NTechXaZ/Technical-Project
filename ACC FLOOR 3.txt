@@ -105,6 +105,6 @@ shutdown
 
 
 int vlan 990
-ip add 10.150.0.43 255.255.255.0
-
+ip add 10.150.0.61 255.255.255.0
+no shut
 
