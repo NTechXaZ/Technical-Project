@@ -37,6 +37,16 @@ name DataCentre
 
 #Port-Channel 
 
+int range g0/0-1
+no ip address
+no shut
+channel-group 1 mode auto
+
+int range g0/2-3
+no ip address
+no shut
+channel-group 2 mode auto
+
 int port-channel 1
 description EtherChannel link to SpringCore1
 switchport trunk encapsulation dot1q
@@ -53,15 +63,7 @@ switchport trunk native vlan 999
 switchport trunk allowed vlan 999,990,720
 no shut
 
-int range g0/0-1
-no ip address
-no shut
-channel-group 1 mode active
 
-int range g0/2-3
-no ip address
-no shut
-channel-group 2 mode active
 
 int vlan 990 
 ip add 10.150.0.71 255.255.255.0
