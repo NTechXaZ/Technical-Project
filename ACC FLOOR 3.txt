@@ -90,11 +90,24 @@ switchport mode access
 switchport access vlan 325
 switchport nonegotiate
 no shut
+int g2/0
+description Access port for Visitor3
+switchport mode access
+switchport access vlan 325
+switchport nonegotiate
+no shut
+int g2/1
+description Access port for Visitor3
+switchport mode access
+switchport access vlan 325
+switchport nonegotiate
+no shut
 int g3/2
 description Access port for IT
 switchport mode access
 switchport access vlan 720
 switchport nonegotiate
+no shut
 
 int g1/3
 switchport mode access
