@@ -128,7 +128,7 @@ no shut
 
 int range g0/3,g1/0
 no ip address
-channel-group 2 mode active
+channel-group 2 mode desirable
 
 int port-channel 2
 description EtherChannel2 DataCenter
