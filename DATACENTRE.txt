@@ -64,7 +64,7 @@ no shut
 channel-group 2 mode active
 
 int vlan 990 
-ip add 10.150.0.44 255.255.255.0
+ip add 10.150.0.71 255.255.255.0
 no shut
 
 
