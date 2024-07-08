@@ -101,6 +101,18 @@ switchport mode access
 switchport access vlan 155
 switchport nonegotiate
 no shut
+int g2/0
+description Access port for Visitor1
+switchport mode access
+switchport access vlan 155
+switchport nonegotiate
+no shut
+int g2/1
+description Access port for Visitor1
+switchport mode access
+switchport access vlan 155
+switchport nonegotiate
+no shut
 int g3/2
 description Access port for IT
 switchport mode access
@@ -108,11 +120,6 @@ switchport access vlan 720
 switchport nonegotiate
 no shut
 
-int g2/2
-switchport mode access
-switchport access vlan 999
-switchport nonegotiate
-shutdown
 
 interface vlan 990
 ip add 10.150.0.41 255.255.255.0
