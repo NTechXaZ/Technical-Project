@@ -59,3 +59,9 @@ priority 110
 auto-cost reference-bandwidth 1000
 passive-interface g0/3
 
+
+
+#Task 3
+
+logging 10.150.0.16
+logging trap informational
