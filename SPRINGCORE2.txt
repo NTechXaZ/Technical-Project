@@ -376,3 +376,9 @@ passive-interface vlan325
 passive-interface vlan720
 passive-interface vlan990
 network 10.150.0.0 0.0.0.255 area 0
+
+
+#Task 3
+
+logging 10.150.0.16
+logging trap informational
