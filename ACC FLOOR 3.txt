@@ -120,25 +120,21 @@ switchport nonegotiate
 no shut
 
 interface vlan 990 
-ip add 10.150.0.51 255.255.255.0
-no shut
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int vlan 990
 ip add 10.150.0.61 255.255.255.0
 no shut
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
