@@ -15,7 +15,6 @@ password Windows1
 login
 transport input telnet
 service password-encryption
-no ip domain-lookup
 clock timezone EST -5
 banner motd #Authorized Access Only!#
 sdm prefer dual-ipv4-and-ipv6 default
