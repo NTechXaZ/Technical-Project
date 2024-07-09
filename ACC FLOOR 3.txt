@@ -125,7 +125,10 @@ no shut
 
 
 
+#Task 3
 
+logging 10.150.0.16
+logging trap informational
 
 
 
