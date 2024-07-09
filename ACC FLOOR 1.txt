@@ -120,3 +120,10 @@ no shut
 
 interface vlan 990
 ip add 10.150.0.41 255.255.255.0
+
+
+#Task 3
+
+logging 10.150.0.16
+logging trap informational
+
