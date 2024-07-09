@@ -80,8 +80,16 @@ int g1/1
 switchport mode access
 switchport access vlan 990
 switchport nonegotiate
+no shut
 
 int g1/2
 switchport mode access
 switchport access vlan 720
 switchport nonegotiate
+no shut
+
+
+#Task 3
+
+logging 10.150.0.16
+logging trap informational
